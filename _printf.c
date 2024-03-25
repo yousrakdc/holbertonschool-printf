@@ -8,8 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0; l = 0;
-	inf (*p)(va_list);
+	int i = 0, l = 0;
+	int (*p)(va_list);
 	va_list args;
 
 	va_start(args, format);
@@ -25,8 +25,8 @@ int _printf(const char *format, ...)
 				&& format[i + 1] != '%' && format[i + 1] != 'd'
 				&& format[i + 1] != 'i')
 				{
-					l += _putchar(format[i]);
-					l += _putchar(format[i + 1]);
+					l += putchar(format[i]);
+					l += putchar(format[i + 1]);
 					i++;
 				}
 				else
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
+			putchar(format[i]);
 			l++;
 		}
 		i++;
