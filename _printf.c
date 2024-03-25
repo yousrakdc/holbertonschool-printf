@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				else
 				{
 					p = print_func(&format[i + 1]);
-					l =+ p(args);
+					l += p(args);
 					i++;
 				}
 			}

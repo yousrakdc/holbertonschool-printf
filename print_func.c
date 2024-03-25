@@ -23,7 +23,7 @@ int (*print_func(const char *format))(va_list)
 	{
 		if (*format == *(p[i].specifier))
 		{
-			return (p[i].specifier);
+			return (p[i].p);
 		}
 	}
 	return (NULL);

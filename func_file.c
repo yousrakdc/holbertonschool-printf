@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_char - prints character
@@ -8,7 +9,7 @@
 
 int print_char(va_list args)
 {
-	-putchar(va_arg(args, int));
+	putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -28,7 +29,7 @@ int print_str(va_list args)
 		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
-		_putchar(str[i]);
+		putchar(str[i]);
 	}
 	return (i);
 }

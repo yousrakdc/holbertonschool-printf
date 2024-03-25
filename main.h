@@ -15,7 +15,7 @@
  */
 typedef struct func_type
 {
-	char *t;
+	char *specifier;
 	int (*p)(va_list);
 } func_t;
 
@@ -24,5 +24,6 @@ int (*print_func(const char *format))(va_list);
 int print_char(va_list args);
 int print_str(va_list args);
 int print_pct(va_list args);
+int print_dec(va_list args);
 
 #endif
