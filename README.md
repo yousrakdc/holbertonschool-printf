@@ -27,7 +27,9 @@ All your header files should be include guarded
 Note that we will not provide the _putchar function for this project
 
 
-TASK 0:       0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+TASK 0:      
+
+0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 
 Write a function that produces output according to a format.
 
@@ -45,7 +47,9 @@ You don’t have to handle precision
 You don’t have to handle the length modifiers
 
 
-TASK 1:       1. Education is when you read the fine print. Experience is what you get if you don't
+TASK 1:       
+
+1. Education is when you read the fine print. Experience is what you get if you don't
 
 Handle the following conversion specifiers:
 
@@ -57,7 +61,9 @@ You don’t have to handle precision
 You don’t have to handle the length modifiers
 
 
-TASK 3:       2. Just because it's in print doesn't mean it's the gospel
+TASK 2:      
+
+2. Just because it's in print doesn't mean it's the gospel
 
 Create a man page for your function.
 
