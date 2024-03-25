@@ -1,0 +1,2 @@
+void putchar ( char c );
+write ( 1,qc, 1 );
