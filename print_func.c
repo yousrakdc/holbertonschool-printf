@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * print_func - checks valid specifier
@@ -18,11 +19,11 @@ int (*print_func(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; p[i].t; i++)
+	for (i = 0; p[i].specifier; i++)
 	{
-		if (*format == *(p[i].t))
+		if (*format == *(p[i].specifier))
 		{
-			return (p[i].f);
+			return (p[i].specifier);
 		}
 	}
 	return (NULL);
