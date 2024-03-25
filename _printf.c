@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					p = get_func(&format[i + 1]);
+					p = print_func(&format[i + 1]);
 					l =+ p(args);
 					i++;
 				}
