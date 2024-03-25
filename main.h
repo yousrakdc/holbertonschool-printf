@@ -8,6 +8,17 @@
 #include <limits.h>
 #include <string.h>
 
+/**
+ * struct func_type - type structure
+ * @t: pointer 
+ * @f: pointer-function
+ */
+typedef struct func_type
+{
+	char *t;
+	int (*p)(va_list);
+} func_t;
+
 int _printf(const char *format, ...);
 int (*print_func(const char *format))(va_list);
 int print_char(va_list args);
