@@ -8,43 +8,42 @@
  */
 int _printf(const char *format, ...)
 {
+	int i = 0; l = 0;
+	inf (*p)(va_list);
 	va_list args;
-	int count = 0;
-	const char *str;
 
 	va_start(args, format);
-
-	while (*format)
+	if (format == NULL || !format[i + 1])
+		return (-1);
+	while (format[i])
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			format++;
-			switch (*format)
+			if (format[i + 1])
 			{
-				case 'c':
-					putchar(va_arg(args, int));
-					count++;
-					break;
-				case '%':
-					putchar('%');
-					count++;
-					break;
-				case 's':
-					for (str = va_arg(args, const char*); *str; str++)
-					{
-						putchar(*str);
-						count++;
-					}
-					break;
+				if (format[i + 1] != 'c' && format[i + 1] != 's'
+				&& format[i + 1] != '%' && format[i + 1] != 'd'
+				&& format[i + 1] != 'i')
+				{
+					l += _putchar(format[i]);
+					l += _putchar(format[i + 1]);
+					i++;
+				}
+				else
+				{
+					p = get_func(&format[i + 1]);
+					l =+ p(args);
+					i++;
+				}
 			}
 		}
 		else
 		{
-			putchar(*format);
-			count++;
+			_putchar(format[i]);
+			l++;
 		}
-		format++;
+		i++;
 	}
 	va_end(args);
-	return (count);
+	return (l);
 }
