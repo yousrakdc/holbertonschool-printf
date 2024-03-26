@@ -9,24 +9,23 @@
 #include <string.h>
 
 /**
- * struct func_type - type structure
- * @t: pointer 
- * @f: pointer-function
+ * struct function_type - type structure
+ * @t: pointer
+ * @specifier: specifier
+ * @ptr: ptr
  */
-typedef struct func_type
+
+typedef struct function_type
 {
 	char *specifier;
-	int (*p)(va_list);
+	int (*ptr)(va_list);
 } func_t;
 
 int _printf(const char *format, ...);
-int (*print_func(const char *format))(va_list);
+int (*print_function(const char *format))(va_list);
 int print_char(va_list args);
-int print_str(va_list args);
-int print_pct(va_list args);
-int print_dec(va_list args);
-int alloc_b(char *hold, int k, char *buffer, int j, double *total);
-char *conv(char c);
-char *nada(char c);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_integer(va_list args);
 
 #endif
