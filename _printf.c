@@ -8,44 +8,42 @@
  */
 int _printf(const char *format, ...)
 {
+	int i = 0, l = 0;
+	int (*ptr)(va_list);
 	va_list args;
-	int count = 0;
-	const char *current = format;
 
 	va_start(args, format);
-	while (*current)
+	if (format == NULL || !format[i + 1])
+		return (-1);
+	while (format[i])
 	{
-		if (*current == '%')
+		if (format[i] == '%')
 		{
-			current++;
-			if (*current == 'c')
+			if (format[i + 1])
 			{
-				char c = (char) va_arg(args, int);
-
-				putchar(c);
-				count++;
-			}
-			else if (*current == 's')
-			{
-				char *s = va_arg(args, char *);
-
-				while (*s)
+				if (format[i + 1] != 'c' && format[i + 1] != 's'
+						&& format[i + 1] != '%' && format[i + 1] != 'd'
+						&& format[i + 1] != 'i')
 				{
-					putchar(*s);
-					s++, count++;
+					l += putchar(format[i]);
+					l += putchar(format[i + 1]);
+					i++;
 				}
-			}
-			else if (*current == '%')
-			{
-				putchar('%'), count++;
+				else
+				{
+					ptr = print_function(&format[i + 1]);
+					l += ptr(args);
+					i++;
+				}
 			}
 		}
 		else
 		{
-			putchar(*current), count++;
+			putchar(format[i]);
+			l++;
 		}
-		current++;
+		i++;
 	}
 	va_end(args);
-	return (count);
+	return (l);
 }
