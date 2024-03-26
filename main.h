@@ -25,5 +25,8 @@ int print_char(va_list args);
 int print_str(va_list args);
 int print_pct(va_list args);
 int print_dec(va_list args);
+int alloc_b(char *hold, int k, char *buffer, int j, double *total);
+char *conv(char c);
+char *nada(char c);
 
 #endif
