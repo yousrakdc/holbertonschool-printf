@@ -1,0 +1,16 @@
+Man page printf en C
+
+int
+printf(const char *format, ...);
+
+Nous utilisons la fonction _printf() avec % suivi du type de spécificateur de format pour afficher la valeur de la variable.Le spécificateur de format est utilisé lors de l'entrée et de la sortie. C'est une manière de dire au compilateur quel type de données se trouve dans une variable lors de la saisie à l'aide de _printf().
+
+
+Spécificateurs de conversion
+%i - substitut pour une variable entière,
+%d - substitut pour une variable entière en base décimale (base 10),
+%c - substitut pour une valeur d'une variable de type caractère,
+%s - substitut pour une valeur d'une variable de type chaîne de caractères,
+%% - substitut pour un seul '%'.
+
+Yousra et Diarra 
