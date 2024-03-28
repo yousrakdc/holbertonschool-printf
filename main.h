@@ -18,7 +18,7 @@
 typedef struct function_type
 {
 	char *specifier;
-	int (*ptr)(va_list);
+	int (*valid_types)(va_list);
 } func_t;
 
 int _printf(const char *format, ...);
