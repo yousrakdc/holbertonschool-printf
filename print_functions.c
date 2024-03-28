@@ -10,7 +10,7 @@
 int (*print_function(const char *format))(va_list)
 {
 	int i;
-	func_t ptr[] = {
+	func_t valid_types[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
@@ -19,11 +19,11 @@ int (*print_function(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; ptr[i].specifier; i++)
+	for (i = 0; valid_types[i].specifier; i++)
 	{
-		if (*format == *(ptr[i].specifier))
+		if (*format == *(valid_types[i].specifier))
 		{
-			return (ptr[i].ptr);
+			return (valid_types[i].valid_types);
 		}
 	}
 	return (NULL);
