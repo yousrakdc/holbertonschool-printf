@@ -9,7 +9,7 @@
 
 int print_char(va_list args)
 {
-	putchar(va_arg(args, int));
+	_putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -29,7 +29,7 @@ int print_string(va_list args)
 		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 	}
 	return (i);
 }
@@ -63,7 +63,7 @@ int print_integer(va_list args)
 
 	if (last < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		num = -num;
 		n = -n;
 		last = -last;
@@ -80,12 +80,12 @@ int print_integer(va_list args)
 		while (expo > 0)
 		{
 			digit = num / expo;
-			putchar(digit + '0');
+			_putchar(digit + '0');
 			num = num - (digit * expo);
 			expo = expo / 10;
 			i++;
 		}
 	}
-	putchar(last + '0');
+	_putchar(last + '0');
 	return (i);
 }

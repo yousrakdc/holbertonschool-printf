@@ -25,13 +25,13 @@ int _printf(const char *format, ...)
 				&& format[i + 1] != '%' && format[i + 1] != 'd'
 				&& format[i + 1] != 'i')
 				{
-					l += putchar(format[i]);
-					l += putchar(format[i + 1]);
+					l += _putchar(format[i]);
+					l += _putchar(format[i + 1]);
 					i++;
 				}
 				else
 				{
-					ptr = print_function(format + i + 1);
+					ptr = print_function(&format[i + 1]);
 					l += ptr(args);
 					i++;
 				}
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			l++;
 		}
 		i++;
