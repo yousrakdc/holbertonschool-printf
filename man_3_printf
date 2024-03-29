@@ -42,13 +42,13 @@ EXAMPLES
        #include "main.h"
 
        int main() {
-           int count = _printf("Hello, %s! You have %d apples.\n", "Alice", 3);
+           int count = _printf("Hello, %s! You have %d apples.\n", "Anna", 3);
            printf("Number of characters printed: %d\n", count);
            return 0;
        }
 
        Output:
-       Hello, Alice! You have 3 apples.
+       Hello, Anna! You have 3 apples.
        Number of characters printed: 31
 
 SEE ALSO
