@@ -85,5 +85,5 @@ int print_integer(va_list args)
 		divisor /= 10;
 	}
 
-	return len;
+	return (len);
 }
