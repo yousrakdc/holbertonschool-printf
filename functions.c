@@ -62,6 +62,12 @@ int print_integer(va_list args)
 	n = n / 10;
 	num = n;
 
+	if (num == 0)
+	{
+		putchar('0');
+		return (1);
+	}
+
 	if (last < 0)
 	{
 		putchar('-');
