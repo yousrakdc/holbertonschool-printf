@@ -10,9 +10,8 @@
 
 /**
  * struct function_type - type structure
- * @t: pointer
  * @specifier: specifier
- * @ptr: ptr
+ * @valid_types: valid types
  */
 
 typedef struct function_type
