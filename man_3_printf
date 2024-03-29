@@ -1,0 +1,59 @@
+PRINTF(3)                          Linux Programmer's Manual                          PRINTF(3)
+
+
+
+NAME
+       _printf - produce formatted output
+
+SYNOPSIS
+       #include <stdarg.h>
+       #include <stdio.h>
+       #include "main.h"
+
+       int _printf(const char *format, ...);
+
+DESCRIPTION
+       The _printf() function produces output according to a format string. It is similar to the standard printf() function
+       but with a simplified implementation.
+
+RETURN VALUE
+       Upon successful completion, _printf() returns the number of characters printed. If an error occurs, it returns -1.
+
+FORMAT SPECIFIERS
+       The following format specifiers are supported:
+
+       · %c: Character. The argument must be an int, which is converted to an unsigned char for printing.
+
+       · %s: String. The argument must be a pointer to a character array (string).
+
+       · %d, %i: Integer. The argument must be an int, which is printed as a signed decimal number.
+
+       · %%: Literal %. Prints a single percent sign.
+
+BUGS
+       This function does not support all the format specifiers provided by the standard printf() function. It only
+       supports %c, %s, %d, %i, and %%.
+
+       No length modifiers are supported for integer conversion specifiers (%d and %i). Furthermore, floating-point
+       numbers (%f) and other data types are not supported.
+
+EXAMPLES
+       #include <stdio.h>
+       #include "main.h"
+
+       int main() {
+           int count = _printf("Hello, %s! You have %d apples.\n", "Alice", 3);
+           printf("Number of characters printed: %d\n", count);
+           return 0;
+       }
+
+       Output:
+       Hello, Alice! You have 3 apples.
+       Number of characters printed: 31
+
+SEE ALSO
+       printf(3), putchar(3), va_start(3), va_end(3)
+
+AUTHORS
+       This version of _printf() was written by Yousra Kerdouchi & Diarra Boureima.
+	March 28th, 2024.
