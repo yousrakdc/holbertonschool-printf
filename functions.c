@@ -87,32 +87,3 @@ int print_integer(va_list args)
 
 	return (len);
 }
-
-/**
- * print_binary - prints an unsigned integer in binary format
- * @args: arguments
- * Return: number of characters printed
- */
-int print_binary(va_list args)
-{
-	unsigned int value = va_arg(args, unsigned int);
-	unsigned int mask = 1 << (sizeof(unsigned int) * 8 - 1);
-	int len = 0;
-	int started = 0;
-
-	while (mask > 0)
-	{
-		if (value & mask)
-		{
-			len += putchar('1');
-			started = 1;
-		}
-		else if (started || mask == 1)
-		{
-			len += putchar('0');
-		}
-		mask >>= 1;
-	}
-
-	return (len);
-}
