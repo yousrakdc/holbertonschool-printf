@@ -52,7 +52,7 @@ EXAMPLES
        Number of characters printed: 31
 
 SEE ALSO
-       printf(3), putchar(3), va_start(3), va_end(3)
+       printf(3), _putchar(3), va_start(3), va_end(3)
 
 AUTHORS
        This version of _printf() was written by Yousra Kerdouchi & Diarra Boureima.
