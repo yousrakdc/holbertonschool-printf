@@ -54,36 +54,38 @@ int print_percent(va_list args)
 
 int print_integer(va_list args)
 {
-	int value = va_arg(args, int);
-	unsigned int abs_value;
-	unsigned int divisor = 1;
-	unsigned int temp;
-	int len = 0;
-	int digit;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, expo = 1;
+	int i = 1;
 
-	if (value < 0)
-	{
-		len += putchar('-');
-		abs_value = (unsigned int)(-value);
-	}
-	else
-	{
-		abs_value = (unsigned int)value;
-	}
+	n = n / 10;
+	num = n;
 
-	temp = abs_value;
-	while (temp > 9)
+	if (last < 0)
 	{
-		divisor *= 10;
-		temp /= 10;
+		putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-
-	while (divisor != 0)
+	if (num > 0)
 	{
-		digit = (abs_value / divisor) % 10;
-		len += putchar(digit + '0');
-		divisor /= 10;
+		while (num / 10 != 0)
+		{
+			expo = expo * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (expo > 0)
+		{
+			digit = num / expo;
+			putchar(digit + '0');
+			num = num - (digit * expo);
+			expo = expo / 10;
+			i++;
+		}
 	}
-
-	return (len);
+	putchar(last + '0');
+	return (i);
 }
