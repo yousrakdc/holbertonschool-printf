@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <string.h> 
 
 /**
  * print_function - checks valid specifier
