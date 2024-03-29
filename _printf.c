@@ -22,8 +22,8 @@ int _printf(const char *format, ...)
 			if (format[i + 1])
 			{
 				if (format[i + 1] != 'c' && format[i + 1] != 's'
-						&& format[i + 1] != '%' && format[i + 1] != 'd'
-						&& format[i + 1] != 'i')
+						&& format[i + 1] != ' ' && format[i + 1] != 'd'
+						&& format[i + 1] != 'i' && format[i + 1] != 'b')
 				{
 					l += putchar(format[i]);
 					l += putchar(format[i + 1]);
